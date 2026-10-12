@@ -76,7 +76,7 @@ export async function runGmailAuthFlow(config: AppConfig, repo: AppRepository, l
   }
 
   repo.upsertConnectedAccount(email, tokens);
-  logger.info(`Stored Gmail OAuth tokens for ${email}`);
+  logger.info('Stored Gmail OAuth tokens for the connected account');
 }
 
 export async function getAuthorizedGmail(config: AppConfig, repo: AppRepository) {

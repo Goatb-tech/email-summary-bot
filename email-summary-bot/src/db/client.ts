@@ -48,6 +48,7 @@ export function createRepository(sqlitePath: string): AppRepository {
   }
 
   const db = new Database(sqlitePath);
+  if (sqlitePath !== ':memory:') fs.chmodSync(sqlitePath, 0o600);
   db.pragma('journal_mode = WAL');
 
   db.exec(`
